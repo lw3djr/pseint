@@ -87,7 +87,7 @@ Algoritmo turismoObraSocial
 			Escribir " "
 			Escribir  " La confirmacion se dara luego de que un agente del area de Turismo se comunique con usted"
 			Escribir " "
-			Escribir " "
+			Escribir " Nuestros datos de contacto:"
 			Escribir "                          Turismo Social - Legajo 9518"
 			Escribir "                           Calle 5 N° 1657 - La Plata"
 			Escribir "Tel./Fax.: (0221) 425-6666 / 427-1230 / Línea gratuita: 0800-888-5784 - Interno. 200"
@@ -95,30 +95,29 @@ Algoritmo turismoObraSocial
 			Escribir "                     Correo electrónico: turismo@tugremio.org "
 			Escribir "	              Horario de atención: lunes a viernes de 8:30 a 15.30 hs. "
 			Escribir " "
-			Escribir "Presione enter para continuar", afiliado
-			Escribir afiliado
+			Escribir "Presione enter para continuar"
 			Esperar Tecla
-			//Leer practicas
+			//
 			
 		FinSi
 		
 		Si (OP=2) Entonces
-			// Seccion para Turismo
+			// "   2. Alojamientos turisticos nacionales"
 			Escribir "de aqui saldria a sub proceso Turismo"
 			
 		FinSi
 		Si (OP=3) Entonces	
-			// Seccion para Descuentos
+			// "   3. Salidas Grupales"
 			Escribir "de aqui saldria a sub proceso descuentos"
 			
 		FinSi
 		Si (OP=4) Entonces
-			// Seccion para estimador cuota
+			// "  4. Mini Turismo"
 			Escribir "de aqui saldria a sub proceso estimador cuota"
 			
 		FinSi
 		Si (OP=5) Entonces
-			// Seccion para Afiliaciones
+			// "   5. Destinos Internacionales "
 			Escribir " de aqui saldria a sub proceso afiliaciones"
 			
 			escribir "Su Número de afiliado es: "
@@ -130,9 +129,10 @@ Algoritmo turismoObraSocial
 			Eleccion<- " RECUERDE QUE SOLO PUEDE ELEGIR DEL 1 AL 6 "
 			centrar(Eleccion, 30)
 		FinSi
-		Escribir " Su ultima opcion elejida fue: ", OP
+		
+		Escribir "  "
 		Escribir "Presione enter para continuar"
-		Escribir afiliado
+		
 		Esperar Tecla
 	Hasta Que OP=6
 	
