@@ -14,7 +14,6 @@ Funcion reserv <- CalcularNumAfiliado(num)
 	reserv<-azar(9999) + 1
 	// escribir afiliado
 	// retorna el numero de afiliado
-	// Probar novedad
 FinFuncion
 
 
