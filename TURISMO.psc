@@ -16,6 +16,8 @@ FinFuncion
 // Escribir "                     Correo electrónico: turismo@tugremio.org "
 // Escribir "	              Horario de atención: lunes a viernes de 8:30 a 15.30 hs. "
 
+
+
 Algoritmo turismoObraSocial
 	//  
 	// Presenta las diferentes opciones para turismo 
@@ -24,7 +26,7 @@ Algoritmo turismoObraSocial
 	//   Salidas Grupales
 	//   Miniturismo
 	//   Destinos Internacionales
-	
+	definir OPturismo Como Caracter
 	Repetir
 		// mostrar menu
 		Limpiar Pantalla
@@ -39,9 +41,9 @@ Algoritmo turismoObraSocial
 		// ingresar una opción
 		Eleccion<- "     Elija una opción (1-6): "
 		centrar(Eleccion, 20)
-		Leer OP
+		Leer OPturismo
 		// procesar esa opción
-		Si (OP=1) Entonces
+		Si (OPturismo="1") Entonces
 			// seccion para turismo hotelero
 			Escribir "Estos son los hoteles que disponemos en estos momentos para usted: "
 			Escribir " "
@@ -77,6 +79,7 @@ Algoritmo turismoObraSocial
 					reservaGasto<-17200
 					destino<-  " Hotel Camaro II, en  CABA"
 				De Otro Modo:
+					destino<-"    ANULACION DE RESERVA ... "
 					Escribir " al elegir una opcion distinta a las listadas su reserva se cancela"
 					reservaGasto<-0
 			Fin Segun
@@ -85,8 +88,9 @@ Algoritmo turismoObraSocial
 			Escribir " "
 			Escribir " Su gasto aproximado seria de $: ", reservaGasto, " este dependera de sus datos finales cuando confirme la reserva"
 			Escribir " "
-			Escribir  " La confirmacion se dara luego de que un agente del area de Turismo se comunique con usted"
-			Escribir " "
+			Escribir " La confirmacion se dara luego de que un agente del area de Turismo se comunique con usted"
+			Escribir "     *** SI USTED CANCELO POR ERROR, PUEDE COMUNICARSE CON TURISMO Y CON GUSTO LO AYUDAREMOS *** "
+			Escribir ""
 			Escribir " Nuestros datos de contacto:"
 			Escribir "                          Turismo Social - Legajo 9518"
 			Escribir "                           Calle 5 N° 1657 - La Plata"
@@ -101,29 +105,27 @@ Algoritmo turismoObraSocial
 			
 		FinSi
 		
-		Si (OP=2) Entonces
+		Si (OPturismo="2") Entonces
 			// "   2. Alojamientos turisticos nacionales"
-			Escribir "de aqui saldria a sub proceso Turismo"
+			Escribir "de aqui saldria a sub proceso Alojamientos turisticos nacionales"
 			
 		FinSi
-		Si (OP=3) Entonces	
+		Si (OPturismo="3") Entonces	
 			// "   3. Salidas Grupales"
-			Escribir "de aqui saldria a sub proceso descuentos"
+			Escribir "de aqui saldria a sub proceso Salidas Grupales"
 			
 		FinSi
 		Si (OP=4) Entonces
 			// "  4. Mini Turismo"
-			Escribir "de aqui saldria a sub proceso estimador cuota"
+			Escribir "de aqui saldria a sub proceso Mini Turismo"
 			
 		FinSi
-		Si (OP=5) Entonces
+		Si (OPturismo="5") Entonces
 			// "   5. Destinos Internacionales "
-			Escribir " de aqui saldria a sub proceso afiliaciones"
-			
-			escribir "Su Número de afiliado es: "
+			Escribir " de aqui saldria a sub proceso Destinos Internacionales"
 			
 		FinSi
-		Si (OP>6) o (OP=0) Entonces //Cuando el Usuario oprime cualquier tecla dirferente a las enumeradas en el menu
+		Si (OPturismo>"6") o (OPturismo="0") Entonces //Cuando el Usuario oprime cualquier tecla dirferente a las enumeradas en el menu
 			Eleccion<- "Opción no válida"
 			centrar(Eleccion, 30)
 			Eleccion<- " RECUERDE QUE SOLO PUEDE ELEGIR DEL 1 AL 6 "
@@ -134,7 +136,7 @@ Algoritmo turismoObraSocial
 		Escribir "Presione enter para continuar"
 		
 		Esperar Tecla
-	Hasta Que OP=6
+	Hasta Que OPturismo="6"
 	
 	
 FinAlgoritmo
