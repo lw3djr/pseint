@@ -7,15 +7,21 @@ funcion centrar(TextPantalla, inicial)
 FinFuncion
 //LA FUNCION CENTRAR HAY QUE BORRARLA CUANDO SE INTEGREN TODAS LAS PARTES
 
+funcion datosTurismo(vienede)
+	
+	//funcion para listar datos de contacto TURISMO
+	Escribir " Gracias por visitar la seccion ", vienede
+	Escribir ""
+	Escribir " Nuestros datos de contacto:"
+	Escribir "                          Turismo Social - Legajo 9518"
+	Escribir "                           Calle 5 N° 1657 - La Plata"
+	Escribir "Tel./Fax.: (0221) 425-6666 / 427-1230 / Línea gratuita: 0800-888-5784 - Interno. 200"
+	Escribir "	                              WhatsApp: 221599999"
+	Escribir "                     Correo electrónico: turismo@tugremio.org "
+	Escribir "	              Horario de atención: lunes a viernes de 8:30 a 15.30 hs. "
+	Escribir ""
 
-// Datos de contacto ficticios
-// Escribir "                          Turismo Social - Legajo 9518"
-//Escribir "                           Calle 5 N° 1657 - La Plata"
-// Escribir "Tel./Fax.: (0221) 425-6666 / 427-1230 / Línea gratuita: 0800-888-5784 - Interno. 200"
-// Escribir "	                              WhatsApp: 221599999"
-// Escribir "                     Correo electrónico: turismo@tugremio.org "
-// Escribir "	              Horario de atención: lunes a viernes de 8:30 a 15.30 hs. "
-
+FinFuncion
 
 
 Algoritmo turismoObraSocial
@@ -25,8 +31,10 @@ Algoritmo turismoObraSocial
 	//   alojamientos turísticos
 	//   Salidas Grupales
 	//   Miniturismo
-	//   Destinos Internacionales
+	//   Listado de los principales destinos que se suelen elejir. 
 	definir OPturismo Como Caracter
+	Dimension Historial[10]
+	
 	Repetir
 		// mostrar menu
 		Limpiar Pantalla
@@ -45,6 +53,7 @@ Algoritmo turismoObraSocial
 		// procesar esa opción
 		Si (OPturismo="1") Entonces
 			// seccion para turismo hotelero
+			seccion<- " Hoteleria " //para que la funcion de datos de contacto lo informe
 			Limpiar Pantalla
 			Escribir "Estos son los hoteles que disponemos en estos momentos para usted: "
 			Escribir " "
@@ -93,14 +102,7 @@ Algoritmo turismoObraSocial
 			Escribir " La confirmacion se dara luego de que un agente del area de Turismo se comunique con usted."
 			Escribir "     *** SI USTED CANCELO POR ERROR, PUEDE COMUNICARSE CON TURISMO Y CON GUSTO LO AYUDAREMOS ***. "
 			Escribir ""
-			Escribir " Nuestros datos de contacto:"
-			Escribir "                          Turismo Social - Legajo 9518."
-			Escribir "                           Calle 5 N° 1657 - La Plata."
-			Escribir "Tel./Fax.: (0221) 425-6666 / 427-1230 / Línea gratuita: 0800-888-5784 - Interno. 200."
-			Escribir "	                              WhatsApp: 221599999."
-			Escribir "                     Correo electrónico: turismo@tugremio.org "
-			Escribir "	              Horario de atención: lunes a viernes de 8:30 a 15.30 hs. "
-			Escribir " "
+			datosTurismo(seccion)
 			Escribir "Presione enter para continuar."
 			Esperar Tecla
 			//
@@ -109,16 +111,19 @@ Algoritmo turismoObraSocial
 		
 		Si (OPturismo="2") Entonces
 			// "   2. Alojamientos turisticos nacionales"
+			seccion<- " Alojamientos turisticos nacionales " //para que la funcion de datos de contacto lo informe
 			Escribir "de aqui saldria a sub proceso Alojamientos turisticos nacionales."
 			
 		FinSi
 		Si (OPturismo="3") Entonces	
 			// "   3. Salidas Grupales"
+			seccion<- " Salidas Grupales " //para que la funcion de datos de contacto lo informe
 			Escribir "de aqui saldria a sub proceso Salidas Grupales."
 			
 		FinSi
 		Si (OPturismo="4") Entonces
 			// "  4. Mini Turismo"
+			seccion<- " Mini Turismo " //para que la funcion de datos de contacto lo informe
 			Escribir "Le presentaremos opciones para MINI Tursimo."
 			Escribir "    OPRIMA UNA TECLA.   "
 			Esperar Tecla
@@ -182,21 +187,15 @@ Algoritmo turismoObraSocial
 			Escribir " La confirmacion se dara luego de que un agente del area de Turismo se comunique con usted."
 			Escribir "     *** SI USTED CANCELO POR ERROR, PUEDE COMUNICARSE CON TURISMO Y CON GUSTO LO AYUDAREMOS ***. "
 			Escribir ""
-			Escribir " Nuestros datos de contacto:"
-			Escribir "                          Turismo Social - Legajo 9518."
-			Escribir "                           Calle 5 N° 1657 - La Plata."
-			Escribir "Tel./Fax.: (0221) 425-6666 / 427-1230 / Línea gratuita: 0800-888-5784 - Interno. 200."
-			Escribir "	                              WhatsApp: 221599999."
-			Escribir "                     Correo electrónico: turismo@tugremio.org "
-			Escribir "	              Horario de atención: lunes a viernes de 8:30 a 15.30 hs. "
-			Escribir " "
+			datosTurismo(seccion)
 			Escribir "Presione enter para continuar."
 			Esperar Tecla
 			//
 			
 		FinSi
 		Si (OPturismo="5") Entonces
-			// "   5. Destinos Internacionales "
+			// "   5. Rancking de destinos "
+			seccion<- " Rancking de destinos de nuestros afiliados " //para que la funcion de datos de contacto lo informe
 			Escribir "Le presentaremos nuestro rancking de destinos."
 			Escribir "    OPRIMA UNA TECLA.   "
 			Esperar Tecla
@@ -222,14 +221,7 @@ Algoritmo turismoObraSocial
 			Escribir " "
 			Escribir "     *** esta seccion es solo informativa, pero PUEDE COMUNICARSE CON TURISMO Y CON GUSTO LO AYUDAREMOS ***. "
 			Escribir ""
-			Escribir " Nuestros datos de contacto:"
-			Escribir "                          Turismo Social - Legajo 9518."
-			Escribir "                           Calle 5 N° 1657 - La Plata."
-			Escribir "Tel./Fax.: (0221) 425-6666 / 427-1230 / Línea gratuita: 0800-888-5784 - Interno. 200."
-			Escribir "	                              WhatsApp: 221599999."
-			Escribir "                     Correo electrónico: turismo@tugremio.org "
-			Escribir "	              Horario de atención: lunes a viernes de 8:30 a 15.30 hs. "
-			Escribir " "
+			datosTurismo(seccion)
 			Escribir "Presione enter para continuar."
 			Esperar Tecla
 			//
@@ -249,7 +241,7 @@ Algoritmo turismoObraSocial
 	
 	// Aqui se supone que antes de regresar mostramos todo lo que eligio el afiliado
 	
-	Escribir " 1.  Bariloche."
+	Escribir seccion
 	Escribir " 2.  Buenos Aires."
 	Escribir " 3.  Iguazú."
 	Escribir " 4.  Mendoza."
@@ -262,3 +254,18 @@ Algoritmo turismoObraSocial
 	Esperar Tecla
 	
 FinAlgoritmo
+
+SubAlgoritmo  HistorialCarga(ubicacion, lugar) // esta funcion cargaria un breve historial de navegación en tursmo
+	si ubicacion < 10 Entonces
+		Historial[ubicacion]<-lugar
+	FinSi
+FinSubAlgoritmo
+
+
+SubProceso  HistorialMuestra(ubicacion)
+	para inicio<-1 Hasta ubicacion Con Paso 1 Hacer
+		Mostrar " --> ", Historial[ubicacion]
+	FinPara
+	
+FinSubProceso
+
