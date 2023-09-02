@@ -24,9 +24,9 @@ Algoritmo menuObraSocial
 		Limpiar Pantalla
 		Encabezado<-"Menú de Prestaciones y beneficios"
 		centrar(Encabezado,40)
-		Escribir "   1. Reintegros"
-		Escribir "   2. Turismo"
-		Escribir "   3. Descuentos"
+		Escribir "   1. Reintegros" //LISTO 
+		Escribir "   2. Turismo" // LISTO
+		Escribir "   3. Descuentos" // LISTO
 		Escribir "   4. Estimador de Cuota Voluntario"
 		Escribir "   5. Afiliaciones "
 		Escribir "   6. Salir"
