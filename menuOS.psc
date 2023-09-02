@@ -42,12 +42,34 @@ Algoritmo menuObraSocial
 		FinSi
 		Si (OP=2) Entonces
 			// Seccion para Turismo
+			
+			// listoooooooooooo
+			
 			Escribir "de aqui saldria a sub proceso Turismo"
 		
 		FinSi
 		Si (OP=3) Entonces	
 			// Seccion para Descuentos
-			Escribir "de aqui saldria a sub proceso descuentos"
+			Escribir " ____AQUI LES PRESENTAMOS LOS PRINCIPALES CONVENIOS DE DESCUENTOS PARA NUESTROS AFILIADOS_______"
+			Escribir ""
+			Escribir "Especial cumpleaños Banco Provincia: 40% de descuento en comercios adheridos del lunes 11 al 30 de septiembre, con tope de $ 3.000. Para nuestros afiliados que cumplan años durante este mes (incluye a los integrantes del grupo familiar directo). Participan comercios de todos los rubros."
+			Escribir ""
+			Escribir "Carnicerías y pescaderías 35% de descuento en comercios adheridos los sábados y domingos. Tope de $ 4.500 por Afiliado y por semana"
+			Escribir ""
+			Escribir "Verdulerías y fruterías: 40% de descuento en comercios adheridos los sábados y domingos. Tope de $2.500 por Afiliado y por semana."
+			Escribir ""
+			Escribir "Comercios de barrio:?30% de descuento los días miércoles y jueves de septiembre, con tope de $ 2.500 por Afiliado y por semana."
+			Escribir ""
+			Escribir "Ferias y mercados:?40% de?descuento en compras realizadas en negocios adheridos, vigente todos los días del mes, con tope de $ 2.500 por afiliado y por semana."
+			Escribir ""
+			Escribir "Supermercados:?20% de descuento?el lunes y martes 19 de septiembre, con tope de $ 2.000 por afiliado y por semana."
+			Escribir "Jóvenes de 13 a 17 años:?$ 2.000 de regalo por persona por mes en las librerías y kioscos adheridos para afiliados o integrantes del grupo familiar directo."
+			Escribir ""
+			Escribir "10% de descuento en recargas de tarjetas SUBE en los kioscos adheridos, para afiliado titular o familiar directo."
+			Escribir ""
+			Escribir "En todos los casos se debe presentar el carnet de afiliado y DNI para acreditar la correspondencia de alguno de los beneficios aquí descriptos."
+			Escribir ""
+			Escribir "Ante cualquier duda o consulta puede comunicarse con el delegado, referente que lo afilio o en nuestras oficinas."
 			
 		FinSi
 		Si (OP=4) Entonces

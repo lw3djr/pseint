@@ -7,6 +7,32 @@ funcion centrar(TextPantalla, inicial)
 FinFuncion
 //LA FUNCION CENTRAR HAY QUE BORRARLA CUANDO SE INTEGREN TODAS LAS PARTES
 
+// Sub Proceso que muestra los 10, secciones que el usuario visito durante la ejecucion
+
+SubProceso  HistorialMuestra(arreglo)
+	Mostrar " "
+	Mostrar " Aqui le presentamos las 10 secciones que visito"
+	Mostrar " "
+	Mostrar " Si visito menos de 10 el resto aparecera sin datos"
+	Mostrar " "
+	para inicio<-1 Hasta 10 Con Paso 1 Hacer
+		Mostrar " --> ", inicio, " : ", arreglo[inicio]
+	FinPara
+	
+FinSubProceso
+
+// Sub Proceso que cargaria el Historial
+
+SubProceso HistorialCarga(vector,cantidad,lugar)
+	
+	si cantidad <= 10 Entonces
+		vector[cantidad]<-lugar
+	FinSi
+	
+FinSubProceso
+
+// seria la firma de cada salida o regreso, una especie de pie de pagina
+
 funcion datosTurismo(vienede)
 	
 	//funcion para listar datos de contacto TURISMO
@@ -19,7 +45,7 @@ funcion datosTurismo(vienede)
 	Escribir "	                              WhatsApp: 221599999"
 	Escribir "                     Correo electrónico: turismo@tugremio.org "
 	Escribir "	              Horario de atención: lunes a viernes de 8:30 a 15.30 hs. "
-	Escribir ""
+	
 
 FinFuncion
 
@@ -32,16 +58,27 @@ Algoritmo turismoObraSocial
 	//   Salidas Grupales
 	//   Miniturismo
 	//   Listado de los principales destinos que se suelen elejir. 
-	definir OPturismo Como Caracter
-	Dimension Historial[10]
 	
+// variables CARACTER
+	
+	definir OPturismo Como Caracter
+	
+// variables VECTORES
+	
+	Dimension Historia[10]
+	
+// variables numericas
+
+	definir contador Como Entero
+	
+	contador<-1
 	Repetir
 		// mostrar menu
 		Limpiar Pantalla
 		Encabezado<-"Menú de  TURISMO"
 		centrar(Encabezado,40)
 		Escribir "   1. Hoteleria."
-		Escribir "   2. Alojamientos turisticos nacionales."
+		Escribir "   2. Informacion para comprender los datos sobre categorias en alojamiento."
 		Escribir "   3. Salidas Grupales."
 		Escribir "   4. Mini Turismo."
 		Escribir "   5. Listado de los principales destinos que se suelen elejir. "
@@ -54,6 +91,8 @@ Algoritmo turismoObraSocial
 		Si (OPturismo="1") Entonces
 			// seccion para turismo hotelero
 			seccion<- " Hoteleria " //para que la funcion de datos de contacto lo informe
+			HistorialCarga(Historia,contador,seccion)
+			contador<-contador+1
 			Limpiar Pantalla
 			Escribir "Estos son los hoteles que disponemos en estos momentos para usted: "
 			Escribir " "
@@ -110,20 +149,80 @@ Algoritmo turismoObraSocial
 		FinSi
 		
 		Si (OPturismo="2") Entonces
-			// "   2. Alojamientos turisticos nacionales"
-			seccion<- " Alojamientos turisticos nacionales " //para que la funcion de datos de contacto lo informe
-			Escribir "de aqui saldria a sub proceso Alojamientos turisticos nacionales."
+			// "   2. Informacion para comprender los datos sobre categorias en alojamiento."
+			seccion<- " Informacion para comprender los datos sobre categorias en alojamiento. " //para que la funcion de datos de contacto lo informe
+			HistorialCarga(Historia,contador,seccion)
+			contador<-contador+1
+			Limpiar Pantalla
+			Escribir " "
+			Escribir " Cantidad de estrellas en los HOTELES: "
+			Escribir " 1 estrella: habitación doble de 12 m2 mínimo e individual de 7. Cuarto de baño de 3,5 m2 mínimo. Calefacción y ascensor."
+			Escribir " 2 estrellas: habitación doble de 14 m2 mínimo e individual de 7. Cuarto de baño de 3,5 a 4 m2 mínimo. Teléfono en la habitación, calefacción, ascensor y caja de seguridad."
+			Escribir " 3 estrellas: habitación doble de 15 m2 mínimo e individual de 8. Cuarto de baño de 4 m2 mínimo. Teléfono en la habitación, calefacción, aire acondicionado en zonas comunes, ascensor y caja de seguridad."
+			Escribir " 4 estrellas: habitación doble de 16 m2 mínimo e individual de 9. Cuarto de baño con baño y ducha de 4,5 m2 mínimo. Teléfono en la habitación, calefacción, aire acondicionado en la habitación, ascensor, bar y caja de seguridad en la habitación."
+			Escribir " 5 estrellas: habitación doble de 17 m2 mínimo e individual de 10. Cuarto de baño con baño y ducha de 5 m2 mínimo. Teléfono en la habitación, calefacción, aire acondicionado en la habitación, ascensor, bar y caja de seguridad en la habitación."
+			Escribir " "
+			Escribir " Alojamientos urbanos: Son todos aquellos hoteles o apartamentos que se encuentran dentro del núcleo urbano o metropolitano."
+			Escribir ""
+			Escribir " Albergues: Son establecimientos donde hay habitaciones con varios números de camas. "
+			Escribir ""
+			Escribir ""
+			Escribir " Business Hotel: Estos alojamientos están destinados, en exclusiva, a atraer mujeres y hombres de negocios.  "
+			Escribir ""
+			Escribir " Capsule Hotel: Esta nueva tendencia de alojamientos aún no se encuentra en muchas ciudades. "
+			Escribir ""
+			Escribir " Bed & Breakfast: Son alojamientos que incluyen el desayuno en el precio de las habitaciones.  "
+			Escribir ""
+			Escribir " Hostal o Pensión: Son más económicos que un hotel convencional. Ofrecen, además del desayuno, la comida, cena o ambas (media pensión y pensión completa)."
+			Escribir ""
+			Escribir " Casas Rurales y Hoteles Rústicos: Se encuentran en zonas alejadas de las ciudades, normalmente en pueblos pequeños y zonas de montaña. "
+			Escribir ""
+			Escribir " Campings: Los campings suelen estar formados por una gran cantidad de parcelas donde auto-caravanas u otros vehículos establecen sus tiendas de campaña o carpas. "
+			Escribir ""
+			Escribir " Resorts y Hoteles de playa: Los resorts son grandes complejos vacacionales situados cerca de playas u otros entornos tropicales. "
+			Escribir ""
+			Escribir " puede visitar la pagina oficial del Sistema de Informacin Turistica Nacional"
+			Escribir " alli encotrara datos oficiales de todos los alojamientos registrados en nuestro país"
+			Escribir  "                       https://datos.yvera.gob.ar/ "
+			Escribir ""
+			destino<- " Informacion de categorias y tipos de alojamientos "
+			
+			Escribir " Su elección fue: ", destino
+			Escribir " "
+			Escribir " "
+			Escribir " La confirmacion se dara luego de que un agente del area de Turismo se comunique con usted."
+			Escribir "     *** SI USTED CANCELO POR ERROR, PUEDE COMUNICARSE CON TURISMO Y CON GUSTO LO AYUDAREMOS ***. "
+			Escribir ""
+			datosTurismo(seccion)
+			Escribir "Presione enter para continuar."
+			Esperar Tecla
 			
 		FinSi
 		Si (OPturismo="3") Entonces	
 			// "   3. Salidas Grupales"
 			seccion<- " Salidas Grupales " //para que la funcion de datos de contacto lo informe
+			
+			HistorialCarga(Historia,contador,seccion)
+			contador<-contador+1
+			Limpiar Pantalla
 			Escribir "de aqui saldria a sub proceso Salidas Grupales."
+			Escribir " Su elección fue: ", destino
+			Escribir " "
+			Escribir " "
+			Escribir " La confirmacion se dara luego de que un agente del area de Turismo se comunique con usted."
+			Escribir "     *** SI USTED CANCELO POR ERROR, PUEDE COMUNICARSE CON TURISMO Y CON GUSTO LO AYUDAREMOS ***. "
+			Escribir ""
+			datosTurismo(seccion)
+			Escribir "Presione enter para continuar."
+			Esperar Tecla
 			
 		FinSi
 		Si (OPturismo="4") Entonces
 			// "  4. Mini Turismo"
 			seccion<- " Mini Turismo " //para que la funcion de datos de contacto lo informe
+			HistorialCarga(Historia,contador,seccion)
+			contador<-contador+1
+			Limpiar Pantalla
 			Escribir "Le presentaremos opciones para MINI Tursimo."
 			Escribir "    OPRIMA UNA TECLA.   "
 			Esperar Tecla
@@ -196,6 +295,9 @@ Algoritmo turismoObraSocial
 		Si (OPturismo="5") Entonces
 			// "   5. Rancking de destinos "
 			seccion<- " Rancking de destinos de nuestros afiliados " //para que la funcion de datos de contacto lo informe
+			HistorialCarga(Historia,contador,seccion)
+			contador<-contador+1
+			Limpiar Pantalla
 			Escribir "Le presentaremos nuestro rancking de destinos."
 			Escribir "    OPRIMA UNA TECLA.   "
 			Esperar Tecla
@@ -227,6 +329,7 @@ Algoritmo turismoObraSocial
 			//
 		FinSi
 		Si (OPturismo>"6") o (OPturismo<="0") Entonces //Cuando el Usuario oprime cualquier tecla dirferente a las enumeradas en el menu
+			Limpiar Pantalla
 			Eleccion<- "Opción no válida"
 			centrar(Eleccion, 30)
 			Eleccion<- " RECUERDE QUE SOLO PUEDE ELEGIR DEL 1 AL 6 "
@@ -239,33 +342,17 @@ Algoritmo turismoObraSocial
 		Esperar Tecla
 	Hasta Que OPturismo="6"
 	
-	// Aqui se supone que antes de regresar mostramos todo lo que eligio el afiliado
+	// Aqui antes de regresar mostramos todo lo que eligio el afiliado
 	
-	Escribir seccion
-	Escribir " 2.  Buenos Aires."
-	Escribir " 3.  Iguazú."
-	Escribir " 4.  Mendoza."
-	Escribir " 5.  Salta."
-	Escribir " 6.  Ushuaia."
-	Escribir " 7.  Calafate."
-	Escribir " 8.  Córdoba."
-	Escribir " 9.  Mar del Plata."
-	Escribir " 10. Orlando (Disney) como único destino internacional (nuestra recomendación CONOZCAMOS NUESTRO PAIS PRIMERO)."
+	HistorialMuestra(Historia)
+	seccion<- " REGRESANDO"
+	datosTurismo(seccion)
+	Escribir "Presione enter para continuar."
 	Esperar Tecla
 	
 FinAlgoritmo
 
-SubAlgoritmo  HistorialCarga(ubicacion, lugar) // esta funcion cargaria un breve historial de navegación en tursmo
-	si ubicacion < 10 Entonces
-		Historial[ubicacion]<-lugar
-	FinSi
-FinSubAlgoritmo
 
 
-SubProceso  HistorialMuestra(ubicacion)
-	para inicio<-1 Hasta ubicacion Con Paso 1 Hacer
-		Mostrar " --> ", Historial[ubicacion]
-	FinPara
-	
-FinSubProceso
+
 
