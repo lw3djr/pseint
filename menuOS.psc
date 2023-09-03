@@ -10,7 +10,7 @@ funcion centrar(TextPantalla, inicial)
 FinFuncion
 
 //SubProceso para asignar numero afiliado
-Funcion reserv <- CalcularNumAfiliado(num) 
+Funcion reserv <- CalcularNumAfiliado 
 	reserv<-azar(9999) + 1
 	// escribir afiliado
 	// retorna el numero de afiliado
@@ -27,13 +27,13 @@ Algoritmo menuObraSocial
 		Escribir "   1. Reintegros" //LISTO 
 		Escribir "   2. Turismo" // LISTO
 		Escribir "   3. Descuentos" // LISTO
-		Escribir "   4. Estimador de Cuota Voluntario"
+		Escribir "   4. Estimador de Cuota AFILIADO" //LISTO
 		Escribir "   5. Afiliaciones "
 		Escribir "   6. Salir"
 		// ingresar una opción
 		Eleccion<- "     Elija una opción (1-6): "
 		centrar(Eleccion, 20)
-		Leer OP
+		Leer OP //OP variable que identifica la OPcion del usuario
 		// procesar esa opción
 		Si (OP=1) Entonces
 			// seccion para reintegros
@@ -80,8 +80,8 @@ Algoritmo menuObraSocial
 		Si (OP=5) Entonces
 			// Seccion para Afiliaciones
 			Escribir " de aqui saldria a sub proceso afiliaciones"
-			
-			escribir "Su Número de afiliado es: ", CalcularNumAfiliado(afiliado)
+			AfiliadoTempora<-CalcularNumAfiliado()
+			escribir "Su Número de afiliado es: ", AfiliadoTempora
 			
 		FinSi
 		Si (OP>6) o (OP=0) Entonces //Cuando el Usuario oprime cualquier tecla dirferente a las enumeradas en el menu
