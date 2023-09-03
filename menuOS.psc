@@ -19,6 +19,59 @@ FinFuncion
 
 Algoritmo menuObraSocial
 	
+	//Variables numericas
+	
+	definir afiliadoPleno Como Entero
+	definir afiliadoAdherente Como Entero
+	definir adicionalConyuge Como Entero
+	definir adicionalHijos Como Entero
+	definir estimador Como Entero
+	definir valorFinalCuota Como Entero
+	definir tipoAfiliado Como Entero
+	definir valorFinalCuota Como Entero
+	definir OP Como Entero
+	definir AfiliadoTempora Como Entero
+	definir afiliado Como Entero
+	definir porcentajeReintegro Como Entero
+	definir practicas Como Entero
+	definir montoReintegro Como Entero
+	definir vueltas Como Entero
+	definir valorReintegroOdontologico Como Entero
+	definir odontologicos Como Entero
+	definir montoOdontologico Como Entero
+	definir valorReintegroortopedia Como Entero
+	definir facturasOrtoped Como Entero
+	definir facturaValor Como Entero
+	definir monto Como Entero
+	definir montoTotalReintegros Como Entero
+	definir simulador Como Entero
+	definir continuar Como Entero
+	definir valorFinalCuota Como Entero
+	definir tipoAfiliado Como Entero
+	definir cantidadHijos Como Entero
+	definir AfiliadoTempora Como Entero
+	definir contador Como Entero
+	definir MiniTurismoOpcion Como Entero
+	definir monto Como Entero
+	
+	//varaibles caracter
+	
+	definir OPturismo Como Caracter
+	definir Eleccion Como caracter
+	definir cantidadHijos Como caracter
+	definir Encabezado Como caracter
+	definir OPturismo Como caracter
+	definir seccion Como caracter
+	definir reservaGasto Como caracter
+	definir destino Como caracter
+	definir Eleccion Como caracter
+	definir Eleccion Como caracter
+	
+	// variables vectores
+	
+	Dimension Historia[10]
+	
+	
 	Repetir
 		// mostrar menu
 		Limpiar Pantalla
