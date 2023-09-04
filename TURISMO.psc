@@ -205,14 +205,44 @@ Algoritmo turismoObraSocial
 			HistorialCarga(Historia,contador,seccion)
 			contador<-contador+1
 			Limpiar Pantalla
-			Escribir "de aqui saldria a sub proceso Salidas Grupales."
+			Escribir "Estos son las principales salidas grupales por las que podra optar."
+			Escribir ""
+			
+			Escribir " 29/Octubre-01/Noviembre: Caravana `Los amantes del vino`, alojándose dentro de la Bodega Algodón Wine Estates Resort, en San Rafael, Mendoza."
+			Escribir ""
+			Escribir " 15/Noviembre: Cataratas del iguazú con Luna LLena."
+			Escribir ""
+			Escribir " 30/Diciembre: Fin de Año en el Fin del Mundo, si en Ushuaia."
+			Escribir ""
+			Escribir " Ballenas y pingüinos en Puerto Madryn."
+			Escribir ""
+			Escribir " Bariloche y catedrales de hielo."
+			Escribir ""
+			Escribir " Ushuaia + El Calafate + El Chaltén."	
+			Escribir ""
+			Escribir " Esteros del Iberá ? Saltos del Moconá."	
+			Escribir ""
+			Escribir " Noroeste Argentino: Tucumán ? Salta y Jujuy."
+			Escribir ""
+			Escribir " Mendoza: los caminos del vino & las olivas"	
+			Escribir ""
+			Escribir " San Juán ? La Rioja y Catamarca"	
+			Escribir ""
+			Escribir " Buenos Aires Espectacular"	
+			Escribir ""
+			destino<- "Principales Salidas Grupales Nacionales"	
+			
 			Escribir " Su elección fue: ", destino
 			Escribir " "
 			Escribir " "
 			Escribir " La confirmacion se dara luego de que un agente del area de Turismo se comunique con usted."
 			Escribir "     *** SI USTED CANCELO POR ERROR, PUEDE COMUNICARSE CON TURISMO Y CON GUSTO LO AYUDAREMOS ***. "
 			Escribir ""
+			Escribir " Recuerde su numero de afiliado:  ", afiliado
+			Escribir ""
+			
 			datosTurismo(seccion)
+			
 			Escribir "Presione enter para continuar."
 			Esperar Tecla
 			
@@ -222,6 +252,7 @@ Algoritmo turismoObraSocial
 			seccion<- " Mini Turismo " //para que la funcion de datos de contacto lo informe
 			HistorialCarga(Historia,contador,seccion)
 			contador<-contador+1
+			
 			Limpiar Pantalla
 			Escribir "Le presentaremos opciones para MINI Tursimo."
 			Escribir "    OPRIMA UNA TECLA.   "
@@ -286,7 +317,9 @@ Algoritmo turismoObraSocial
 			Escribir " La confirmacion se dara luego de que un agente del area de Turismo se comunique con usted."
 			Escribir "     *** SI USTED CANCELO POR ERROR, PUEDE COMUNICARSE CON TURISMO Y CON GUSTO LO AYUDAREMOS ***. "
 			Escribir ""
+			
 			datosTurismo(seccion)
+			
 			Escribir "Presione enter para continuar."
 			Esperar Tecla
 			//
@@ -323,7 +356,9 @@ Algoritmo turismoObraSocial
 			Escribir " "
 			Escribir "     *** esta seccion es solo informativa, pero PUEDE COMUNICARSE CON TURISMO Y CON GUSTO LO AYUDAREMOS ***. "
 			Escribir ""
+			
 			datosTurismo(seccion)
+			
 			Escribir "Presione enter para continuar."
 			Esperar Tecla
 			//

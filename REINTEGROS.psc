@@ -26,11 +26,13 @@ Algoritmo Reintegros_Obra_Social
 		Escribir "   3. Ortopedía"
 		Escribir "   4. REGRESAR"
 		// ingresar una opción
-		Eleccion<- "     Elija una opción (1-6): "
+		Eleccion<- "     Elija una opción (1-4): "
 		centrar(Eleccion, 20)
-		Leer OP
+		Escribir ""
+		Escribir " Le recordamos su Numero de afiliado: ", afiliado
+		Leer OpReintegros
 		// procesar esa opción
-		Si (OP=1) Entonces
+		Si (OpReintegros=1) Entonces
 			// seccion para Practicas Medicas
 			porcentajeReintegro<- 0.5  // se define el porcentaje de reintegro en una variable, si hay que modificarlo se hace aqui
 			Escribir "INGRESE CANTIDAD DE PACTICAS"
@@ -38,7 +40,7 @@ Algoritmo Reintegros_Obra_Social
 			Para vueltas<-1 Hasta practicas Con Paso 1 Hacer //ciclo PARA que de acuerdo a la cantidad de reintegros va calculando el total a reintegrar
 				escribir "Ingrese el valor de la práctica ", vueltas
 				leer reintegro
-				montoReintegro<-montoMontoReintegro+(reintegro *porcentajeReintegro) //acumula el 50% del valor ingresado
+				montoReintegro<-MontoReintegro+(reintegro *porcentajeReintegro) //acumula el 50% del valor ingresado
 				
 				Escribir ""
 				escribir Sin Saltar "             Se le reintegraran: $ ", (reintegro *porcentajeReintegro), " del valor de su Práctica. " // muestra el importe a reintegrar
@@ -48,7 +50,7 @@ Algoritmo Reintegros_Obra_Social
 			Escribir " La suma de sus reintegros es de: $ ", montoReintegro // Informa el el importe total a reintegrarle al afiliado
 		FinSi
 		
-		Si (OP=2) Entonces
+		Si (OpReintegros=2) Entonces
 			// Seccion para Odontologia
 			valorReintegroOdontologico<-310 //valor actual de reintegro por bono presentado
 			Escribir ""
@@ -60,11 +62,11 @@ Algoritmo Reintegros_Obra_Social
 			
 			montoOdontologico<-odontologicos*310 // multiplica la cantidad de bonos por el importe fijado para reintegro
 				
-			Escribir "Usted ingreso ", odontologicos, " practicas para reintegros "
-			Escribir " La suma de sus reintegros es de: $ ", montoOdontologico // Informa el el importe total a reintegrarle al afiliado
+			Escribir "Usted ingreso ", odontologicos, " bonos para reintegros "
+			Escribir " El monto de a reintegrar es de: $ ", montoOdontologico // Informa el el importe total a reintegrarle al afiliado
 			
 		FinSi
-		Si (OP=3) Entonces	
+		Si (OpReintegros=3) Entonces	
 			// Seccion para Ortopedia
 			valorReintegroortopedia<-0.8 //valor actual de reintegro por bono presentado
 			Escribir ""
@@ -83,26 +85,25 @@ Algoritmo Reintegros_Obra_Social
 				escribir Sin Saltar "             Se le reintegraran: $ ", (facturaValor*valorReintegroortopedia), " del valor de su Factura. " // muestra el importe a reintegrar
 				escribir " "
 			Fin Para
-			monto<-odontologicos*310 // multiplica la cantidad de bonos por el importe fijado para reintegro
-			
-			Escribir "Usted ingreso ", facturasOrtoped, " practicas para reintegros "
-			Escribir " La suma de sus reintegros es de: $ ", montoOrtoped // Informa el el importe total a reintegrarle al afiliado
+				
+			Escribir "Usted ingreso ", facturasOrtoped, " facturas para reintegro. "
+			Escribir " El monto a reintegrar es de: $ ", montoOrtoped // Informa el el importe total a reintegrarle al afiliado
 			
 		FinSi
-		Si (OP>4) o (OP=0) Entonces //Cuando el Usuario oprime cualquier tecla dirferente a las enumeradas en el menu
+		Si (OpReintegros>4) o (OpReintegros=0) Entonces //Cuando el Usuario oprime cualquier tecla dirferente a las enumeradas en el menu
 			Eleccion<- "Opción no válida"
 			centrar(Eleccion, 30)
-			Eleccion<- " RECUERDE QUE SOLO PUEDE ELEGIR DEL 1 AL 6 "
+			Eleccion<- " RECUERDE QUE SOLO PUEDE ELEGIR DEL 1 AL 4 "
 			centrar(Eleccion, 30)
 		FinSi
 		montoTotalReintegros<- montoReintegro+montoOrtoped+montoOdontologico // sumo todos los reintegros que pudo haber solicitado
-		Escribir " Su ultima opcion elejida fue: ", OP
+		Escribir " Su ultima opcion elejida fue: ", OpReintegros
 		Escribir ""
 		Escribir " El monto total obtenido en conceptos de reintegros fue de: $ " montoTotalReintegros
 		Escribir "Presione enter para continuar"
 		Escribir afiliado
 		Esperar Tecla
-	Hasta Que OP=6
+	Hasta Que OpReintegros=4
 	
 	
 FinAlgoritmo
